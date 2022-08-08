@@ -3,7 +3,7 @@
   &__menu {
     margin-bottom: 37px;
     display: flex;
-    width: 50%;
+    width: 60%;
     justify-content:space-between;
     &_link {
       padding:12px 26px;
@@ -87,14 +87,67 @@
           color:$text-color;
         }
         a {
-          font-size: .6rem;
+          color:rgba($text-color, .5)!important;
+          font-size: .8rem;
           &:hover {
-            color:rgba($text-color, .5)!important;
+            color: #5e5e5e!important;
           }
           img {
             margin-left: 5px;
           }
         }
+      }
+    }
+  }
+  @media (max-width:1024px) {
+    &__menu {
+      width: 90%;
+    }
+    &__form {
+      width: 90%;
+      margin: 0 auto;
+      &_input {
+        width: 100%;
+        background:$bg-color url(/images/icons/search-icon.png) no-repeat 95%;
+        ::placeholder {
+          padding-right: 30px;
+        }
+      }
+      &_btn {
+        display: none;
+      }
+    }
+    &__catalog {
+      &_item {
+        width: 45%;
+        &>div {
+          &>img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width:500px) {
+    &__menu {
+      width: 100%;
+      justify-content:center; 
+      align-items: center;
+      &_link {
+        width: 90%;
+        padding: 5px 6px;
+      }
+    }
+    &__form {
+      &_input {
+        width: 100%;
+      }
+    }
+    &__catalog {
+      justify-content: center;
+      &_item {
+        width: 95%;
       }
     }
   }

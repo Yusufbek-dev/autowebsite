@@ -1,0 +1,222 @@
+@use "../globals/colors" as *;
+.popular {
+  padding-top: 80px;
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+  &__menu {
+    column-gap: 40px;
+    display: flex;
+    .link-active {
+      border-bottom: 2px solid $primary-color;
+    }
+    &_link {
+      a {
+        &:hover {
+          color: $text-color !important;
+        }
+      }
+      font-size: 0.9rem;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+      &:hover {
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+  }
+  &__catalog {
+    margin-bottom: 40px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    .arrow-left {
+      position:absolute;
+      left: -5%;
+    }
+    .arrow-right {
+      position:absolute;
+      right: -5%;
+    }
+    &_item {
+      width: 24%;
+      padding: 50px 35px 31px 35px;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 3px 3px 20px rgba(50, 50, 50, 0.25);
+      }
+      &:hover .hover-text {
+        opacity: 1;
+        top: 20%;
+      }
+      &:hover p, &:hover h4 , &:hover h5{
+        color:$primary-color;
+      }
+      .hover-text {
+        transition: .3s;
+        top: 40%;
+        opacity: 0;
+        padding: 18px 22px;
+        background-color: rgba(#fff, .8);
+        border-radius: 3px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        position: absolute;
+      }
+      .sales-mark {
+        padding: 10px 15px 0;
+        top: 0;
+        left: 0;
+        background-color: $primary-color;
+        position:absolute;
+        h5 {
+          padding: 0!important;
+          font-size: .9rem;
+          color: #fff;
+        }
+      }
+      .heart-icon {
+        top: 16px;
+        right: 19px;
+        position: absolute;
+      }
+      & > img {
+        width: 100%;
+        min-width: 200px;
+        min-height: 250px;
+        
+      }
+      p {
+        margin-top: 24px;
+        text-align: center;
+        font-size: 1.2rem;
+        color:$text-color;
+      }
+      h4 {
+        margin-top: 25px;
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+      }
+      &>a {
+        margin-top: 13px;
+        text-decoration: underline;
+        color:$primary-color;
+      }
+      .shop-cart {
+        border-radius: 10px 0px 0px 0px;
+        position:absolute;
+        bottom: -1px;
+        right: -1px;
+        padding: 10px 15px 7.5px 15px;
+        background-color: $primary-color;
+      }
+    }
+  }
+  .dots {
+    visibility:hidden;
+    display: flex;
+    justify-content:space-between;
+    width: 100px;
+    column-gap: 20px;
+    margin: 0 auto;
+    &__dot {
+      background-color:$bg-color;
+      width: 18px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    .dot-active {
+      background-color: $primary-color;
+    }
+  }
+  &__btn {
+    margin-top: 50px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 43px;
+    font-size: 1rem;
+    color:$text-color;
+    letter-spacing: 2px;
+    background-color: $bg-color;
+    border: none;
+    transition: .2s;
+    &:hover {
+      opacity: .7;
+    }
+  }
+  .el-btn {
+    display: none;
+  }
+  @media (max-width:1024px) {
+    &__title {
+      text-align: center;
+    }
+    &__menu {
+      margin: 0 auto;
+      width: 85%;
+      overflow-x: scroll;
+    }
+    &__catalog {
+      flex-wrap: wrap;
+      .arrow-left,
+      .arrow-right {
+        display: none;
+      }
+      row-gap: 50px;
+      &_item {
+        width: 47%;
+      }
+    }
+  }
+  @media (max-width:501px) {
+    &__catalog {
+      &_item {
+        width:95%;
+        padding: 30px 15px 21px 15px;
+      }
+    }
+  }
+  @media (max-width:500px) {
+    .dots {
+      visibility: visible;
+    }
+    .el-btn {
+      display: block;
+    }
+    &__catalog {
+    overflow-x: scroll;
+      &_item {
+        display: 95%;
+
+        p {
+          font-size: 1rem;
+        }
+        h4 {
+          font-size: 1.5rem;
+        }
+        a {
+          font-size: .7rem;
+        }
+      }
+      row-gap: 50px;
+      justify-content:space-between;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    &__btn {
+      padding: 12px 15px;
+    }
+  }
+}
