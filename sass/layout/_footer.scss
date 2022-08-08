@@ -102,6 +102,7 @@ footer {
               padding: 3% 2% 2% 3%;
             }
             .form-btn {
+              padding: 2% 3%;
               margin-left: 0;
             }
           }
@@ -112,6 +113,7 @@ footer {
       p {
         text-align: center;
         flex-direction: column;
+        row-gap: 10px;
         width: 90%;
       }
     }

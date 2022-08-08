@@ -610,11 +610,13 @@ footer .footer-bottom p {
     padding: 3% 2% 2% 3%;
   }
   footer .footer-list__item:nth-child(1) form .form-btn {
+    padding: 2% 3%;
     margin-left: 0;
   }
   footer .footer-bottom p {
     text-align: center;
     flex-direction: column;
+    row-gap: 10px;
     width: 90%;
   }
 }
